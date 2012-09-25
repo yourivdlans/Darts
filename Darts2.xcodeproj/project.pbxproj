@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA3EC1281610A5E800240735 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3EC1261610A5E800240735 /* SettingsViewController.m */; };
+		DAE771C7160DED7000B333F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE771C6160DED7000B333F6 /* UIKit.framework */; };
+		DAE771C9160DED7000B333F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE771C8160DED7000B333F6 /* Foundation.framework */; };
+		DAE771CB160DED7000B333F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE771CA160DED7000B333F6 /* CoreGraphics.framework */; };
+		DAE771D1160DED7000B333F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DAE771CF160DED7000B333F6 /* InfoPlist.strings */; };
+		DAE771D3160DED7000B333F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE771D2160DED7000B333F6 /* main.m */; };
+		DAE771D7160DED7000B333F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE771D6160DED7000B333F6 /* AppDelegate.m */; };
+		DAE771D9160DED7000B333F6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE771D8160DED7000B333F6 /* Default.png */; };
+		DAE771DB160DED7000B333F6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE771DA160DED7000B333F6 /* Default@2x.png */; };
+		DAE771DD160DED7000B333F6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE771DC160DED7000B333F6 /* Default-568h@2x.png */; };
+		DAE771E5160DEE6000B333F6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE771E4160DEE6000B333F6 /* RootViewController.m */; };
+		DAE771EA160DEEA900B333F6 /* RootViewContorller.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAE771E9160DEEA900B333F6 /* RootViewContorller.xib */; };
+		DAE771EE160DF2FD00B333F6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAE771ED160DF2FD00B333F6 /* MainWindow.xib */; };
+		DAFE66FB1611B2D500A77212 /* SettingsSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFE66F91611B2D500A77212 /* SettingsSimpleViewController.m */; };
+		DAFE66FC1611B2D500A77212 /* SettingsSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFE66FA1611B2D500A77212 /* SettingsSimpleViewController.xib */; };
+		DAFE67011611CEA000A77212 /* SettingsAdvancedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFE66FF1611CEA000A77212 /* SettingsAdvancedViewController.m */; };
+		DAFE67021611CEA000A77212 /* SettingsAdvancedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFE67001611CEA000A77212 /* SettingsAdvancedViewController.xib */; };
+		DAFE67041611DF6900A77212 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFE67031611DF6800A77212 /* SettingsViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DA3EC1251610A5E800240735 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		DA3EC1261610A5E800240735 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		DAE771C2160DED7000B333F6 /* Darts2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Darts2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE771C6160DED7000B333F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DAE771C8160DED7000B333F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DAE771CA160DED7000B333F6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DAE771CE160DED7000B333F6 /* Darts2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Darts2-Info.plist"; sourceTree = "<group>"; };
+		DAE771D0160DED7000B333F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DAE771D2160DED7000B333F6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DAE771D4160DED7000B333F6 /* Darts2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Darts2-Prefix.pch"; sourceTree = "<group>"; };
+		DAE771D5160DED7000B333F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DAE771D6160DED7000B333F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DAE771D8160DED7000B333F6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DAE771DA160DED7000B333F6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DAE771DC160DED7000B333F6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DAE771E3160DEE6000B333F6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		DAE771E4160DEE6000B333F6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		DAE771E9160DEEA900B333F6 /* RootViewContorller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewContorller.xib; sourceTree = "<group>"; };
+		DAE771ED160DF2FD00B333F6 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		DAFE66F81611B2D500A77212 /* SettingsSimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSimpleViewController.h; sourceTree = "<group>"; };
+		DAFE66F91611B2D500A77212 /* SettingsSimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSimpleViewController.m; sourceTree = "<group>"; };
+		DAFE66FA1611B2D500A77212 /* SettingsSimpleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsSimpleViewController.xib; sourceTree = "<group>"; };
+		DAFE66FE1611CEA000A77212 /* SettingsAdvancedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsAdvancedViewController.h; sourceTree = "<group>"; };
+		DAFE66FF1611CEA000A77212 /* SettingsAdvancedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsAdvancedViewController.m; sourceTree = "<group>"; };
+		DAFE67001611CEA000A77212 /* SettingsAdvancedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsAdvancedViewController.xib; sourceTree = "<group>"; };
+		DAFE67031611DF6800A77212 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DAE771BF160DED7000B333F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE771C7160DED7000B333F6 /* UIKit.framework in Frameworks */,
+				DAE771C9160DED7000B333F6 /* Foundation.framework in Frameworks */,
+				DAE771CB160DED7000B333F6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DAE771B7160DED7000B333F6 = {
+			isa = PBXGroup;
+			children = (
+				DAE771CC160DED7000B333F6 /* Darts2 */,
+				DAE771C5160DED7000B333F6 /* Frameworks */,
+				DAE771C3160DED7000B333F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DAE771C3160DED7000B333F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DAE771C2160DED7000B333F6 /* Darts2.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DAE771C5160DED7000B333F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAE771C6160DED7000B333F6 /* UIKit.framework */,
+				DAE771C8160DED7000B333F6 /* Foundation.framework */,
+				DAE771CA160DED7000B333F6 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DAE771CC160DED7000B333F6 /* Darts2 */ = {
+			isa = PBXGroup;
+			children = (
+				DAE771D5160DED7000B333F6 /* AppDelegate.h */,
+				DAE771D6160DED7000B333F6 /* AppDelegate.m */,
+				DAE771CD160DED7000B333F6 /* Supporting Files */,
+				DAE771E3160DEE6000B333F6 /* RootViewController.h */,
+				DAE771E4160DEE6000B333F6 /* RootViewController.m */,
+				DAE771E9160DEEA900B333F6 /* RootViewContorller.xib */,
+				DAE771ED160DF2FD00B333F6 /* MainWindow.xib */,
+				DA3EC1251610A5E800240735 /* SettingsViewController.h */,
+				DA3EC1261610A5E800240735 /* SettingsViewController.m */,
+				DAFE67031611DF6800A77212 /* SettingsViewController.xib */,
+				DAFE66F81611B2D500A77212 /* SettingsSimpleViewController.h */,
+				DAFE66F91611B2D500A77212 /* SettingsSimpleViewController.m */,
+				DAFE66FA1611B2D500A77212 /* SettingsSimpleViewController.xib */,
+				DAFE66FE1611CEA000A77212 /* SettingsAdvancedViewController.h */,
+				DAFE66FF1611CEA000A77212 /* SettingsAdvancedViewController.m */,
+				DAFE67001611CEA000A77212 /* SettingsAdvancedViewController.xib */,
+			);
+			path = Darts2;
+			sourceTree = "<group>";
+		};
+		DAE771CD160DED7000B333F6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAE771CE160DED7000B333F6 /* Darts2-Info.plist */,
+				DAE771CF160DED7000B333F6 /* InfoPlist.strings */,
+				DAE771D2160DED7000B333F6 /* main.m */,
+				DAE771D4160DED7000B333F6 /* Darts2-Prefix.pch */,
+				DAE771D8160DED7000B333F6 /* Default.png */,
+				DAE771DA160DED7000B333F6 /* Default@2x.png */,
+				DAE771DC160DED7000B333F6 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DAE771C1160DED7000B333F6 /* Darts2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DAE771E0160DED7000B333F6 /* Build configuration list for PBXNativeTarget "Darts2" */;
+			buildPhases = (
+				DAE771BE160DED7000B333F6 /* Sources */,
+				DAE771BF160DED7000B333F6 /* Frameworks */,
+				DAE771C0160DED7000B333F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Darts2;
+			productName = Darts2;
+			productReference = DAE771C2160DED7000B333F6 /* Darts2.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DAE771B9160DED7000B333F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Youri van der Lans";
+			};
+			buildConfigurationList = DAE771BC160DED7000B333F6 /* Build configuration list for PBXProject "Darts2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DAE771B7160DED7000B333F6;
+			productRefGroup = DAE771C3160DED7000B333F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAE771C1160DED7000B333F6 /* Darts2 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DAE771C0160DED7000B333F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE771D1160DED7000B333F6 /* InfoPlist.strings in Resources */,
+				DAE771D9160DED7000B333F6 /* Default.png in Resources */,
+				DAE771DB160DED7000B333F6 /* Default@2x.png in Resources */,
+				DAE771DD160DED7000B333F6 /* Default-568h@2x.png in Resources */,
+				DAE771EA160DEEA900B333F6 /* RootViewContorller.xib in Resources */,
+				DAE771EE160DF2FD00B333F6 /* MainWindow.xib in Resources */,
+				DAFE66FC1611B2D500A77212 /* SettingsSimpleViewController.xib in Resources */,
+				DAFE67021611CEA000A77212 /* SettingsAdvancedViewController.xib in Resources */,
+				DAFE67041611DF6900A77212 /* SettingsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DAE771BE160DED7000B333F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE771D3160DED7000B333F6 /* main.m in Sources */,
+				DAE771D7160DED7000B333F6 /* AppDelegate.m in Sources */,
+				DAE771E5160DEE6000B333F6 /* RootViewController.m in Sources */,
+				DA3EC1281610A5E800240735 /* SettingsViewController.m in Sources */,
+				DAFE66FB1611B2D500A77212 /* SettingsSimpleViewController.m in Sources */,
+				DAFE67011611CEA000A77212 /* SettingsAdvancedViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DAE771CF160DED7000B333F6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DAE771D0160DED7000B333F6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DAE771DE160DED7000B333F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DAE771DF160DED7000B333F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DAE771E1160DED7000B333F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Darts2/Darts2-Prefix.pch";
+				INFOPLIST_FILE = "Darts2/Darts2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DAE771E2160DED7000B333F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Darts2/Darts2-Prefix.pch";
+				INFOPLIST_FILE = "Darts2/Darts2-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DAE771BC160DED7000B333F6 /* Build configuration list for PBXProject "Darts2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE771DE160DED7000B333F6 /* Debug */,
+				DAE771DF160DED7000B333F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAE771E0160DED7000B333F6 /* Build configuration list for PBXNativeTarget "Darts2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE771E1160DED7000B333F6 /* Debug */,
+				DAE771E2160DED7000B333F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DAE771B9160DED7000B333F6 /* Project object */;
+}
