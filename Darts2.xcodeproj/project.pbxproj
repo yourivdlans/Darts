@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32F7478E16149D5300CF5E2F /* dartboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F7478D16149D5300CF5E2F /* dartboard.png */; };
+		32F747921614A09500CF5E2F /* 0930Dartbord.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 32F747911614A09500CF5E2F /* 0930Dartbord.jpeg */; };
 		DA3EC1281610A5E800240735 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3EC1261610A5E800240735 /* SettingsViewController.m */; };
 		DA44837016147AA80041B75F /* darts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA44836F16147AA80041B75F /* darts.plist */; };
 		DAE771C7160DED7000B333F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE771C6160DED7000B333F6 /* UIKit.framework */; };
@@ -19,7 +21,7 @@
 		DAE771DB160DED7000B333F6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE771DA160DED7000B333F6 /* Default@2x.png */; };
 		DAE771DD160DED7000B333F6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAE771DC160DED7000B333F6 /* Default-568h@2x.png */; };
 		DAE771E5160DEE6000B333F6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE771E4160DEE6000B333F6 /* RootViewController.m */; };
-		DAE771EA160DEEA900B333F6 /* RootViewContorller.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAE771E9160DEEA900B333F6 /* RootViewContorller.xib */; };
+		DAE771EA160DEEA900B333F6 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAE771E9160DEEA900B333F6 /* RootViewController.xib */; };
 		DAE771EE160DF2FD00B333F6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAE771ED160DF2FD00B333F6 /* MainWindow.xib */; };
 		DAFE66FB1611B2D500A77212 /* SettingsSimpleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAFE66F91611B2D500A77212 /* SettingsSimpleViewController.m */; };
 		DAFE66FC1611B2D500A77212 /* SettingsSimpleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAFE66FA1611B2D500A77212 /* SettingsSimpleViewController.xib */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32F7478D16149D5300CF5E2F /* dartboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dartboard.png; sourceTree = "<group>"; };
+		32F747911614A09500CF5E2F /* 0930Dartbord.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0930Dartbord.jpeg; sourceTree = "<group>"; };
 		DA3EC1251610A5E800240735 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		DA3EC1261610A5E800240735 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		DA44836F16147AA80041B75F /* darts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = darts.plist; sourceTree = "<group>"; };
@@ -47,7 +51,7 @@
 		DAE771DC160DED7000B333F6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		DAE771E3160DEE6000B333F6 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		DAE771E4160DEE6000B333F6 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		DAE771E9160DEEA900B333F6 /* RootViewContorller.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewContorller.xib; sourceTree = "<group>"; };
+		DAE771E9160DEEA900B333F6 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		DAE771ED160DF2FD00B333F6 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		DAFE66F81611B2D500A77212 /* SettingsSimpleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSimpleViewController.h; sourceTree = "<group>"; };
 		DAFE66F91611B2D500A77212 /* SettingsSimpleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSimpleViewController.m; sourceTree = "<group>"; };
@@ -75,6 +79,7 @@
 		DAE771B7160DED7000B333F6 = {
 			isa = PBXGroup;
 			children = (
+				32F747911614A09500CF5E2F /* 0930Dartbord.jpeg */,
 				DAE771CC160DED7000B333F6 /* Darts2 */,
 				DAE771C5160DED7000B333F6 /* Frameworks */,
 				DAE771C3160DED7000B333F6 /* Products */,
@@ -107,7 +112,8 @@
 				DAE771CD160DED7000B333F6 /* Supporting Files */,
 				DAE771E3160DEE6000B333F6 /* RootViewController.h */,
 				DAE771E4160DEE6000B333F6 /* RootViewController.m */,
-				DAE771E9160DEEA900B333F6 /* RootViewContorller.xib */,
+				DAE771E9160DEEA900B333F6 /* RootViewController.xib */,
+				32F7478D16149D5300CF5E2F /* dartboard.png */,
 				DAE771ED160DF2FD00B333F6 /* MainWindow.xib */,
 				DA3EC1251610A5E800240735 /* SettingsViewController.h */,
 				DA3EC1261610A5E800240735 /* SettingsViewController.m */,
@@ -192,12 +198,14 @@
 				DAE771D9160DED7000B333F6 /* Default.png in Resources */,
 				DAE771DB160DED7000B333F6 /* Default@2x.png in Resources */,
 				DAE771DD160DED7000B333F6 /* Default-568h@2x.png in Resources */,
-				DAE771EA160DEEA900B333F6 /* RootViewContorller.xib in Resources */,
+				DAE771EA160DEEA900B333F6 /* RootViewController.xib in Resources */,
 				DAE771EE160DF2FD00B333F6 /* MainWindow.xib in Resources */,
 				DAFE66FC1611B2D500A77212 /* SettingsSimpleViewController.xib in Resources */,
 				DAFE67021611CEA000A77212 /* SettingsAdvancedViewController.xib in Resources */,
 				DAFE67041611DF6900A77212 /* SettingsViewController.xib in Resources */,
 				DA44837016147AA80041B75F /* darts.plist in Resources */,
+				32F7478E16149D5300CF5E2F /* dartboard.png in Resources */,
+				32F747921614A09500CF5E2F /* 0930Dartbord.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
