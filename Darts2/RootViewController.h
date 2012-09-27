@@ -14,10 +14,21 @@
 @interface RootViewController : UIViewController
 {
     SettingsViewController *settingsViewController;
+    UISlider *verticalSlider;
+    UISlider *horizontalSlider;
+    UILabel *horizontalPosition;
+    UILabel *verticalPosition;
+    UIButton *fire;
 }
 
 @property (retain, nonatomic) SettingsViewController *settingsViewController;
+@property (retain, nonatomic) IBOutlet UISlider *verticalSlider;
+@property (retain, nonatomic) IBOutlet UISlider *horizontalSlider;
+@property (retain, nonatomic) IBOutlet UILabel *horizontalPosition;
+@property (retain, nonatomic) IBOutlet UILabel *verticalPosition;
 
 - (IBAction)showSettings;
+- (IBAction)fire;
+- (IBAction)updatePositions:(id)sender;
 
 @end
