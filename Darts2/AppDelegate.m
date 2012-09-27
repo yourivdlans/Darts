@@ -26,9 +26,6 @@
 //    [self.window addSubview:[navigationController view]];
 //    [self.window makeKeyAndVisible];
     
-    [self.window addSubview:[rootViewController view]];
-    [self.window makeKeyAndVisible];
-    
     return YES;
 }
 

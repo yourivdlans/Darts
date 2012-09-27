@@ -12,12 +12,10 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
     UIWindow *window;
-//    UINavigationController *navigationController;
     RootViewController *rootViewController;
 }
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
-//@property (retain, nonatomic) IBOutlet UINavigationController *navigationController;
 @property (retain, nonatomic) IBOutlet RootViewController *rootViewController;
 
 @end

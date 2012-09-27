@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsSimpleViewController : UIViewController
+@interface SettingsSimpleViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDelegate>
+{
+    NSString *level;
+}
+
+@property (nonatomic, retain) NSString *level;
+
+- (IBAction)setSimple:(id)sender;
+- (IBAction)setIntermediate:(id)sender;
+- (IBAction)setHard:(id)sender;
 
 @end

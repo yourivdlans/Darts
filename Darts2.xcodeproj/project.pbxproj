@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DA3EC1281610A5E800240735 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3EC1261610A5E800240735 /* SettingsViewController.m */; };
+		DA44837016147AA80041B75F /* darts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA44836F16147AA80041B75F /* darts.plist */; };
 		DAE771C7160DED7000B333F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE771C6160DED7000B333F6 /* UIKit.framework */; };
 		DAE771C9160DED7000B333F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE771C8160DED7000B333F6 /* Foundation.framework */; };
 		DAE771CB160DED7000B333F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE771CA160DED7000B333F6 /* CoreGraphics.framework */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		DA3EC1251610A5E800240735 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		DA3EC1261610A5E800240735 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		DA44836F16147AA80041B75F /* darts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = darts.plist; sourceTree = "<group>"; };
 		DAE771C2160DED7000B333F6 /* Darts2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Darts2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE771C6160DED7000B333F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DAE771C8160DED7000B333F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +118,7 @@
 				DAFE66FE1611CEA000A77212 /* SettingsAdvancedViewController.h */,
 				DAFE66FF1611CEA000A77212 /* SettingsAdvancedViewController.m */,
 				DAFE67001611CEA000A77212 /* SettingsAdvancedViewController.xib */,
+				DA44836F16147AA80041B75F /* darts.plist */,
 			);
 			path = Darts2;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				DAFE66FC1611B2D500A77212 /* SettingsSimpleViewController.xib in Resources */,
 				DAFE67021611CEA000A77212 /* SettingsAdvancedViewController.xib in Resources */,
 				DAFE67041611DF6900A77212 /* SettingsViewController.xib in Resources */,
+				DA44837016147AA80041B75F /* darts.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
