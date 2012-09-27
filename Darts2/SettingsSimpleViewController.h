@@ -12,11 +12,11 @@
 {
     UIPickerView *levelPicker;
     NSArray *levels;
-    NSString *currentLevel;
+    int currentLevel;
 }
 
 @property (nonatomic, retain) IBOutlet UIPickerView *levelPicker;
 @property (nonatomic, retain) IBOutlet NSArray *levels;
-@property (nonatomic, retain) NSString *currentLevel;
+@property (nonatomic) int currentLevel;
 
 @end

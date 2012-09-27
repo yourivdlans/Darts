@@ -45,7 +45,7 @@
         }
         
         NSDictionary *settings = [temp objectForKey:@"settings"];
-        self.currentLevel = [settings objectForKey:@"level"];
+        self.currentLevel = [[settings objectForKey:@"level"] intValue];
     }
     
     return self;
@@ -56,6 +56,8 @@
     NSArray *temp = [[NSArray alloc] initWithObjects:@"Easy", @"Medium", @"Hard", nil];
     self.levels = temp;
     [temp release];
+    
+    [levelPicker selectRow:self.currentLevel inComponent:0 animated:NO];
     
     [super viewDidLoad];
 }
@@ -83,7 +85,7 @@
 
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    self.currentLevel = [levels objectAtIndex:row];
+    self.currentLevel = [[levels objectAtIndex:row] intValue];
 }
 
 @end
