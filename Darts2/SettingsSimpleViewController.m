@@ -16,7 +16,7 @@
 
 @implementation SettingsSimpleViewController
 
-@synthesize level;
+@synthesize levelPicker, levels, currentLevel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,7 +28,11 @@
         NSString *plistPath;
         NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         
-        plistPath = [rootPath stringByAppendingPathComponent:dataPath];
+        plistPath = [rootPath stringByAppendingPathComponent:@"darts.plist"];
+        
+        if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
+            plistPath = [[NSBundle mainBundle] pathForResource:@"darts" ofType:@"plist"];
+        }
         
         NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
         NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization
@@ -41,7 +45,7 @@
         }
         
         NSDictionary *settings = [temp objectForKey:@"settings"];
-        self.level = [settings objectForKey:@"level"];
+        self.currentLevel = [settings objectForKey:@"level"];
     }
     
     return self;
@@ -49,9 +53,11 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    NSArray *temp = [[NSArray alloc] initWithObjects:@"Easy", @"Medium", @"Hard", nil];
+    self.levels = temp;
+    [temp release];
     
-    // Do any additional setup after loading the view from its nib.
+    [super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,19 +66,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)setSimple:(id)sender
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    NSLog(@"set simple");
+    return 1;
 }
 
-- (IBAction)setIntermediate:(id)sender
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    NSLog(@"set intermediate");
+    return [levels count];
 }
 
-- (IBAction)setHard:(id)sender
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    NSLog(@"set hard");
+    return [levels objectAtIndex:row];
+}
+
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    self.currentLevel = [levels objectAtIndex:row];
 }
 
 @end
