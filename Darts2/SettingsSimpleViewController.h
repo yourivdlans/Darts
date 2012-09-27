@@ -10,13 +10,13 @@
 
 @interface SettingsSimpleViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDelegate>
 {
-    NSString *level;
+    UIPickerView *levelPicker;
+    NSArray *levels;
+    NSString *currentLevel;
 }
 
-@property (nonatomic, retain) NSString *level;
-
-- (IBAction)setSimple:(id)sender;
-- (IBAction)setIntermediate:(id)sender;
-- (IBAction)setHard:(id)sender;
+@property (nonatomic, retain) IBOutlet UIPickerView *levelPicker;
+@property (nonatomic, retain) IBOutlet NSArray *levels;
+@property (nonatomic, retain) NSString *currentLevel;
 
 @end
