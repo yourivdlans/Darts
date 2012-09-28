@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsSimpleViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDelegate>
+@interface SettingsSimpleViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 {
     UIPickerView *levelPicker;
     NSArray *levels;
