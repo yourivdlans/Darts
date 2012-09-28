@@ -39,6 +39,9 @@
     
     [tap release];
     
+    CGFloat dX=dartPicker.bounds.size.width/2, dY=dartPicker.bounds.size.height/2;
+    dartPicker.transform = CGAffineTransformTranslate(CGAffineTransformScale(CGAffineTransformMakeTranslation(-dX, -dY), 0.6, 0.6), dX, dY);
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -83,7 +86,21 @@
 
 - (IBAction)setAdvancedSetting:(id)sender
 {
-    NSLog(@"set!");
+    if ( [sender isKindOfClass:[UISwitch class]] )
+    {
+        self.overweightSwitch = (UISwitch *)sender;
+        self.dartsModel.overweight = [self.overweightSwitch isOn];
+    }
+    else if ( [sender isKindOfClass:[UITextField class]] )
+    {
+        self.beersDrunkTextField = (UITextField *)sender;
+        self.dartsModel.beersDrunk = [[self.beersDrunkTextField text] intValue];
+    }
+}
+
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    self.dartsModel.dart = row;
 }
 
 @end
