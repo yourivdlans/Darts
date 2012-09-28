@@ -14,40 +14,14 @@
 
 @implementation SettingsAdvancedViewController
 
-@synthesize overweightSwitch, beersDrunkTextField, dartPicker, darts, overweight, dart, beersDrunk;
+@synthesize dartsModel, overweightSwitch, beersDrunkTextField, dartPicker, darts;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    
     if (self) {
-        NSString *errorDesc = nil;
-        NSPropertyListFormat format;
-        NSString *plistPath;
-        NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        
-        plistPath = [rootPath stringByAppendingPathComponent:@"darts.plist"];
-        
-        if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
-            plistPath = [[NSBundle mainBundle] pathForResource:@"darts" ofType:@"plist"];
-        }
-        
-        NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
-        NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization
-                                              propertyListFromData:plistXML
-                                              mutabilityOption:NSPropertyListMutableContainersAndLeaves
-                                              format:&format
-                                              errorDescription:&errorDesc];
-        if (!temp) {
-            NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
-        }
-        
-        NSDictionary *settings = [temp objectForKey:@"settings"];
-        self.overweight = [[settings objectForKey:@"overweight"] boolValue];
-        self.dart = [[settings objectForKey:@"overweight"] intValue];
-        self.beersDrunk = [[settings objectForKey:@"overweight"] intValue];
+        self.dartsModel = [DartsModel sharedManager];
     }
-    
     return self;
 }
 

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RootViewController.h"
+#import "DartsModel.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {

@@ -7,16 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DartsModel.h"
 
 @interface SettingsSimpleViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 {
+    DartsModel *dartsModel;
+    
     UIPickerView *levelPicker;
     NSArray *levels;
-    int currentLevel;
 }
+
+@property (nonatomic, retain) DartsModel *dartsModel;
 
 @property (nonatomic, retain) IBOutlet UIPickerView *levelPicker;
 @property (nonatomic, retain) IBOutlet NSArray *levels;
-@property (nonatomic) int currentLevel;
 
 @end

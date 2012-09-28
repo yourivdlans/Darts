@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32F7478E16149D5300CF5E2F /* dartboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F7478D16149D5300CF5E2F /* dartboard.png */; };
 		32F747921614A09500CF5E2F /* 0930Dartbord.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 32F747911614A09500CF5E2F /* 0930Dartbord.jpeg */; };
+		DA045CD71615AFDE00F50B7B /* DartsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA045CD61615AFDE00F50B7B /* DartsModel.m */; };
 		DA3EC1281610A5E800240735 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3EC1261610A5E800240735 /* SettingsViewController.m */; };
 		DA44837016147AA80041B75F /* darts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA44836F16147AA80041B75F /* darts.plist */; };
 		DAE771C7160DED7000B333F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE771C6160DED7000B333F6 /* UIKit.framework */; };
@@ -33,6 +34,8 @@
 /* Begin PBXFileReference section */
 		32F7478D16149D5300CF5E2F /* dartboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dartboard.png; sourceTree = "<group>"; };
 		32F747911614A09500CF5E2F /* 0930Dartbord.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0930Dartbord.jpeg; sourceTree = "<group>"; };
+		DA045CD51615AFDE00F50B7B /* DartsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DartsModel.h; sourceTree = "<group>"; };
+		DA045CD61615AFDE00F50B7B /* DartsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DartsModel.m; sourceTree = "<group>"; };
 		DA3EC1251610A5E800240735 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		DA3EC1261610A5E800240735 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		DA44836F16147AA80041B75F /* darts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = darts.plist; sourceTree = "<group>"; };
@@ -125,6 +128,8 @@
 				DAFE66FF1611CEA000A77212 /* SettingsAdvancedViewController.m */,
 				DAFE67001611CEA000A77212 /* SettingsAdvancedViewController.xib */,
 				DA44836F16147AA80041B75F /* darts.plist */,
+				DA045CD51615AFDE00F50B7B /* DartsModel.h */,
+				DA045CD61615AFDE00F50B7B /* DartsModel.m */,
 			);
 			path = Darts2;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				DA3EC1281610A5E800240735 /* SettingsViewController.m in Sources */,
 				DAFE66FB1611B2D500A77212 /* SettingsSimpleViewController.m in Sources */,
 				DAFE67011611CEA000A77212 /* SettingsAdvancedViewController.m in Sources */,
+				DA045CD71615AFDE00F50B7B /* DartsModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

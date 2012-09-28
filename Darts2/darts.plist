@@ -5,7 +5,7 @@
 	<key>settings</key>
 	<dict>
 		<key>level</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>overweight</key>
 		<false/>
 		<key>dart</key>
