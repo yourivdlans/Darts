@@ -12,10 +12,8 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
     UIWindow *window;
-    RootViewController *rootViewController;
 }
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
-@property (retain, nonatomic) IBOutlet RootViewController *rootViewController;
 
 @end

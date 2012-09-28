@@ -57,6 +57,9 @@
     self.levels = temp;
     [temp release];
     
+//    CGFloat dX=levelPicker.bounds.size.width/2, dY=levelPicker.bounds.size.height/2;
+//    levelPicker.transform = CGAffineTransformTranslate(CGAffineTransformScale(CGAffineTransformMakeTranslation(-dX, -dY), 0.6, 0.6), dX, dY);
+    
     [levelPicker selectRow:self.currentLevel inComponent:0 animated:NO];
     
     [super viewDidLoad];

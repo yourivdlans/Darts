@@ -10,7 +10,7 @@
 
 @implementation AppDelegate
 
-@synthesize window, rootViewController;
+@synthesize window;
 
 - (void)dealloc
 {

@@ -8,6 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsAdvancedViewController : UIViewController
+@interface SettingsAdvancedViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource>
+{
+    UISwitch *overweightSwitch;
+    UITextField *beersDrunkTextField;
+    UIPickerView *dartPicker;
+    NSArray *darts;
+    
+    BOOL overweight;
+    int dart;
+    int beersDrunk;
+}
+
+@property (nonatomic, retain) IBOutlet UISwitch *overweightSwitch;
+@property (nonatomic, retain) IBOutlet UITextField *beersDrunkTextField;
+@property (nonatomic, retain) IBOutlet UIPickerView *dartPicker;
+@property (nonatomic, retain) IBOutlet NSArray *darts;
+
+@property (nonatomic) BOOL overweight;
+@property (nonatomic) int dart;
+@property (nonatomic) int beersDrunk;
+
+- (IBAction)setAdvancedSetting:(id)sender;
 
 @end
