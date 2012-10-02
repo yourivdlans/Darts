@@ -12,8 +12,10 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
     UIWindow *window;
+    DartsModel *dartsModel;
 }
 
 @property (strong, nonatomic) IBOutlet UIWindow *window;
+@property (nonatomic, retain) DartsModel *dartsModel;
 
 @end

@@ -39,8 +39,12 @@
     
     [tap release];
     
-    CGFloat dX=dartPicker.bounds.size.width/2, dY=dartPicker.bounds.size.height/2;
-    dartPicker.transform = CGAffineTransformTranslate(CGAffineTransformScale(CGAffineTransformMakeTranslation(-dX, -dY), 0.6, 0.6), dX, dY);
+//    CGFloat dX=dartPicker.bounds.size.width/2, dY=dartPicker.bounds.size.height/2;
+//    dartPicker.transform = CGAffineTransformTranslate(CGAffineTransformScale(CGAffineTransformMakeTranslation(-dX, -dY), 0.6, 0.6), dX, dY);
+    
+    [dartPicker selectRow:self.dartsModel.dart inComponent:0 animated:NO];
+    [overweightSwitch setOn:self.dartsModel.overweight];
+    [beersDrunkTextField setText:[NSString stringWithFormat:@"%i", self.dartsModel.beersDrunk]];
     
     // Do any additional setup after loading the view from its nib.
 }

@@ -22,5 +22,6 @@
 @property (nonatomic) int beersDrunk;
 
 + (id)sharedManager;
+- (void)writeSettings;
 
 @end

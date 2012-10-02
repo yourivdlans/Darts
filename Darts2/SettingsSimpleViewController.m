@@ -64,7 +64,7 @@
 
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    self.dartsModel.level = [[levels objectAtIndex:row] intValue];
+    self.dartsModel.level = row;
 }
 
 @end

@@ -57,8 +57,8 @@ static DartsModel *dartsModel = nil;
 
 - (id)init
 {
-    if (self = [super init]) {
-        NSLog(@"test");
+    if (self = [super init])
+    {
         NSString *errorDesc = nil;
         NSPropertyListFormat format;
         NSString *plistPath;
@@ -66,7 +66,10 @@ static DartsModel *dartsModel = nil;
         
         plistPath = [rootPath stringByAppendingPathComponent:@"darts.plist"];
         
-        if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
+        NSLog(@"%@", plistPath);
+        
+        if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
+        {
             plistPath = [[NSBundle mainBundle] pathForResource:@"darts" ofType:@"plist"];
         }
         
@@ -76,17 +79,26 @@ static DartsModel *dartsModel = nil;
                                               mutabilityOption:NSPropertyListMutableContainersAndLeaves
                                               format:&format
                                               errorDescription:&errorDesc];
-        if (!temp) {
+        if (!temp)
+        {
             NSLog(@"Error reading plist: %@, format: %d", errorDesc, format);
         }
         
         NSDictionary *settings = [temp objectForKey:@"settings"];
         
-        self.level = [[settings objectForKey:@"level"] intValue];
-        self.overweight = [[settings objectForKey:@"overweight"] boolValue];
-        self.dart = [[settings objectForKey:@"overweight"] intValue];
-        self.beersDrunk = [[settings objectForKey:@"overweight"] intValue];
+        NSLog(@"%@", plistPath);
+        
+        level = [[settings objectForKey:@"level"] intValue];
+        overweight = [[settings objectForKey:@"overweight"] boolValue];
+        dart = [[settings objectForKey:@"dart"] intValue];
+        beersDrunk = [[settings objectForKey:@"beers_drunk"] intValue];
+        
+        NSLog(@"%i", level);
+        NSLog(@"%i", overweight);
+        NSLog(@"%i", dart);
+        NSLog(@"%i", beersDrunk);
     }
+    
     return self;
 }
 
@@ -94,6 +106,44 @@ static DartsModel *dartsModel = nil;
 {
     // Should never be called, but just here for clarity really.
     [super dealloc];
+}
+
+- (void)writeSettings
+{
+    NSLog(@"try to write settings");
+    
+    NSNumber *tmpLevel = [NSNumber numberWithInt:level];
+    NSNumber *tmpOverweight = [NSNumber numberWithBool:overweight];
+    NSNumber *tmpDart = [NSNumber numberWithInt:dart];
+    NSNumber *tmpBeersDrunk = [NSNumber numberWithInt:beersDrunk];
+    
+    NSLog(@"%@", tmpLevel);
+    NSLog(@"%@", tmpOverweight);
+    NSLog(@"%@", tmpDart);
+    NSLog(@"%@", tmpBeersDrunk);
+    
+    NSArray *temp = [NSArray arrayWithObjects:tmpLevel, tmpOverweight, tmpDart, tmpBeersDrunk, nil];
+    
+    NSString *error;
+    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *plistPath = [rootPath stringByAppendingPathComponent:@"darts.plist"];
+    NSDictionary *plistDict = [NSDictionary dictionaryWithObjects: temp forKeys:[NSArray arrayWithObjects: @"level", @"overweight", @"dart", @"beers_drunk", nil]];
+    NSDictionary *settingsPlistDict = [NSDictionary dictionaryWithObject:plistDict forKey:@"settings"];
+    
+    NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:settingsPlistDict
+                                                        format:NSPropertyListXMLFormat_v1_0
+                                                         errorDescription:&error];
+    
+    if(plistData)
+    {
+        [plistData writeToFile:plistPath atomically:YES];
+        NSLog(@"settings written");
+    }
+    else
+    {
+        NSLog(@"%@", error);
+        [error release];
+    }
 }
 
 @end
