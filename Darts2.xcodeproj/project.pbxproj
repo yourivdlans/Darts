@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		323BAD32161B0C7700A1AB9D /* dartboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 323BAD30161B0C7700A1AB9D /* dartboard.png */; };
+		323BAD3E161B12E600A1AB9D /* retina_wood_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 323BAD3C161B12E600A1AB9D /* retina_wood_@2X.png */; };
+		323BAD3F161B12E600A1AB9D /* retina_wood.png in Resources */ = {isa = PBXBuildFile; fileRef = 323BAD3D161B12E600A1AB9D /* retina_wood.png */; };
+		323BAD41161B141700A1AB9D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 323BAD40161B141700A1AB9D /* icon.png */; };
+		323BAD43161B143400A1AB9D /* icon@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 323BAD42161B143400A1AB9D /* icon@x2.png */; };
 		32F7478E16149D5300CF5E2F /* dartboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 32F7478D16149D5300CF5E2F /* dartboard.png */; };
-		32F747921614A09500CF5E2F /* 0930Dartbord.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 32F747911614A09500CF5E2F /* 0930Dartbord.jpeg */; };
 		DA045CD71615AFDE00F50B7B /* DartsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA045CD61615AFDE00F50B7B /* DartsModel.m */; };
 		DA3EC1281610A5E800240735 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3EC1261610A5E800240735 /* SettingsViewController.m */; };
 		DA44837016147AA80041B75F /* darts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA44836F16147AA80041B75F /* darts.plist */; };
@@ -32,8 +36,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		323BAD30161B0C7700A1AB9D /* dartboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dartboard.png; sourceTree = "<group>"; };
+		323BAD3C161B12E600A1AB9D /* retina_wood_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "retina_wood_@2X.png"; sourceTree = "<group>"; };
+		323BAD3D161B12E600A1AB9D /* retina_wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retina_wood.png; sourceTree = "<group>"; };
+		323BAD40161B141700A1AB9D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		323BAD42161B143400A1AB9D /* icon@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@x2.png"; sourceTree = "<group>"; };
 		32F7478D16149D5300CF5E2F /* dartboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dartboard.png; sourceTree = "<group>"; };
-		32F747911614A09500CF5E2F /* 0930Dartbord.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0930Dartbord.jpeg; sourceTree = "<group>"; };
 		DA045CD51615AFDE00F50B7B /* DartsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DartsModel.h; sourceTree = "<group>"; };
 		DA045CD61615AFDE00F50B7B /* DartsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DartsModel.m; sourceTree = "<group>"; };
 		DA3EC1251610A5E800240735 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -82,7 +90,11 @@
 		DAE771B7160DED7000B333F6 = {
 			isa = PBXGroup;
 			children = (
-				32F747911614A09500CF5E2F /* 0930Dartbord.jpeg */,
+				323BAD42161B143400A1AB9D /* icon@x2.png */,
+				323BAD40161B141700A1AB9D /* icon.png */,
+				323BAD3C161B12E600A1AB9D /* retina_wood_@2X.png */,
+				323BAD3D161B12E600A1AB9D /* retina_wood.png */,
+				323BAD30161B0C7700A1AB9D /* dartboard.png */,
 				DAE771CC160DED7000B333F6 /* Darts2 */,
 				DAE771C5160DED7000B333F6 /* Frameworks */,
 				DAE771C3160DED7000B333F6 /* Products */,
@@ -210,7 +222,11 @@
 				DAFE67041611DF6900A77212 /* SettingsViewController.xib in Resources */,
 				DA44837016147AA80041B75F /* darts.plist in Resources */,
 				32F7478E16149D5300CF5E2F /* dartboard.png in Resources */,
-				32F747921614A09500CF5E2F /* 0930Dartbord.jpeg in Resources */,
+				323BAD32161B0C7700A1AB9D /* dartboard.png in Resources */,
+				323BAD3E161B12E600A1AB9D /* retina_wood_@2X.png in Resources */,
+				323BAD3F161B12E600A1AB9D /* retina_wood.png in Resources */,
+				323BAD41161B141700A1AB9D /* icon.png in Resources */,
+				323BAD43161B143400A1AB9D /* icon@x2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
