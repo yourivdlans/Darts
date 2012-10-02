@@ -22,7 +22,7 @@ static int board_radius = 100;
 
 @implementation RootViewController
 
-@synthesize settingsViewController, verticalSlider, horizontalSlider, verticalPosition, horizontalPosition, fields, dart, totalPoints, totalPointsLabel;
+@synthesize settingsViewController, verticalSlider, horizontalSlider, fields, dart, totalPoints, totalPointsLabel, dart1label, dart2label, dart3label, fire;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,37 +40,43 @@ static int board_radius = 100;
     verticalSlider.transform = trans;
     
     UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"0930Dartbord.jpeg"] drawInRect:self.view.bounds];
+    [[UIImage imageNamed:@"retina_wood.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
     fields = [[NSArray alloc] initWithObjects:@20, @1, @18, @4, @13, @6, @10, @15, @2, @17, @3, @19, @7, @16, @8, @11, @14, @9, @12, @5, nil];
     dart = 0;
     totalPoints = 0;
 	// Do any additional setup after loading the view.
 }
 
+- (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    if( UIInterfaceOrientationIsLandscape(toInterfaceOrientation) )
+    {
+        dart1label.center = CGPointMake(340,60);
+        dart2label.center = CGPointMake(340,90);
+        dart3label.center = CGPointMake(340,120);
+        
+        totalPointsLabel.center = CGPointMake(340,160);
+    }
+    else
+    {
+        dart1label.center = CGPointMake(85,290);
+        dart2label.center = CGPointMake(85,320);
+        dart3label.center = CGPointMake(85,350);
+        
+        totalPointsLabel.center = CGPointMake(85,390);
+    }
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)updatePositions:(id)sender
-{
-    UISlider * slider = (UISlider*) sender;
-    int stand = (int)(slider.value+0.5F);
-    
-    if( slider.tag == 0 ){
-        NSString * labelValue = [[NSString alloc] initWithFormat:@"Horizontal: %d", stand];
-        horizontalPosition.text = labelValue;
-        [labelValue release];
-    }else if( slider.tag == 1 ){
-        NSString * labelValue = [[NSString alloc] initWithFormat:@"Vertical: %d", stand];
-        verticalPosition.text = labelValue;
-        [labelValue release];
-    }    
 }
 
 - (IBAction)fire
@@ -111,6 +117,16 @@ static int board_radius = 100;
     totalPointsLabel.text = totalPointslabelValue;
     dart += 1;
     
+    if ( dart == 1 ){        
+        dart1label.text = [NSString stringWithFormat:@"Dart 1: %d", points];
+        dart2label.text = [NSString stringWithFormat:@"Dart 2: "];
+        dart3label.text = [NSString stringWithFormat:@"Dart 3: "];
+    }else if ( dart == 2 ){
+        dart2label.text = [NSString stringWithFormat:@"Dart 2: %d", points];
+    }else if ( dart == 3 ){
+        dart3label.text = [NSString stringWithFormat:@"Dart 3: %d", points];
+    }
+    
     bool bouncer = [self checkBouncerWithAngle:angle AndDistance:distance];
     if( dart >= 3 ){
         NSString *endOfTurnAlertMessage = [[NSString alloc] initWithFormat:@"Je hebt in totaal %d punten!", totalPoints];
@@ -120,6 +136,7 @@ static int board_radius = 100;
                                                        cancelButtonTitle: @"OK"
                                                        otherButtonTitles: nil ];
         [endOfTurnAlert show];
+        [endOfTurnAlertMessage release];
         [endOfTurnAlert release];
         
         dart = 0;

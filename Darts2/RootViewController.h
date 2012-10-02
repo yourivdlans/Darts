@@ -16,13 +16,14 @@
     SettingsViewController *settingsViewController;
     UISlider *verticalSlider;
     UISlider *horizontalSlider;
-    UILabel *horizontalPosition;
-    UILabel *verticalPosition;
-    UILabel *totalPointsLabel;
     UIButton *fire;
     NSArray *fields;
     NSInteger dart;
     NSInteger totalPoints;
+    UILabel *totalPointsLabel;
+    UILabel *dart1label;
+    UILabel *dart2label;
+    UILabel *dart3label;
 }
 
 @property (retain, nonatomic) NSArray *fields;
@@ -31,13 +32,15 @@
 @property (retain, nonatomic) SettingsViewController *settingsViewController;
 @property (retain, nonatomic) IBOutlet UISlider *verticalSlider;
 @property (retain, nonatomic) IBOutlet UISlider *horizontalSlider;
-@property (retain, nonatomic) IBOutlet UILabel *horizontalPosition;
-@property (retain, nonatomic) IBOutlet UILabel *verticalPosition;
 @property (retain, nonatomic) IBOutlet UILabel *totalPointsLabel;
+@property (retain, nonatomic) IBOutlet UILabel *dart1label;
+@property (retain, nonatomic) IBOutlet UILabel *dart2label;
+@property (retain, nonatomic) IBOutlet UILabel *dart3label;
+@property (retain, nonatomic) IBOutlet UIButton *fire;
+
 
 - (IBAction)showSettings;
 - (IBAction)fire;
-- (IBAction)updatePositions:(id)sender;
 - (BOOL)checkBouncerWithAngle:(double)angle AndDistance:(double)distance;
 
 @end
