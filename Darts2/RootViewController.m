@@ -36,9 +36,11 @@ static int board_radius = 75;
 {
     self.dartsModel = [DartsModel sharedManager];
     
+    // Transform slider to vertical position
     CGAffineTransform trans = CGAffineTransformMakeRotation(M_PI * 0.5);
     verticalSlider.transform = trans;
     
+    // Place retina_wood background pattern
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"retina_wood.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -46,24 +48,28 @@ static int board_radius = 75;
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    fields = [[NSArray alloc] initWithObjects:@20, @1, @18, @4, @13, @6, @10, @15, @2, @17, @3, @19, @7, @16, @8, @11, @14, @9, @12, @5, nil];
     dart = 0;
     totalPoints = 0;
     deviation = [self determineDeviation];
-    
-    crosshair.hidden = YES;
 
+    // The higher the level, the faster the crosshair moves
     double interval = 1 - ( self.dartsModel.level * 0.4 );
     [self startTimerWithInterval:interval];
-    
+
     [super viewDidLoad];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
+    fields = [[NSArray alloc] initWithObjects:@20, @1, @18, @4, @13, @6, @10, @15, @2, @17, @3, @19, @7, @16, @8, @11, @14, @9, @12, @5, nil];
     double interval = 1 - ( self.dartsModel.level * 0.4 );
     [self startTimerWithInterval:interval];
     [self determineDeviation];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [fields release];
 }
 
 - (void) startTimerWithInterval:(double)interval
@@ -107,12 +113,7 @@ static int board_radius = 75;
 }
 
 - (IBAction)positionCrosshair:(id)sender
-{
-    if( crosshair.isHidden )
-    {
-         crosshair.hidden = NO;
-    }
-    
+{    
     int horizontal = (int)(horizontalSlider.value);
     int vertical = (int)(verticalSlider.value);
     [self moveCrosshairWithX:horizontal andWithY:vertical];
@@ -123,8 +124,8 @@ static int board_radius = 75;
     int deviation_x = (arc4random() % (deviation*2)) - deviation;
     int deviation_y = (arc4random() % (deviation*2)) - deviation;
     
-    int horizontal = (int)(horizontalSlider.value) + deviation_x;
-    int vertical = (int)(verticalSlider.value) + deviation_y;
+    int horizontal = horizontalSlider.value + deviation_x;
+    int vertical = verticalSlider.value + deviation_y;
     
     [self moveCrosshairWithX:horizontal andWithY:vertical];
 }
@@ -134,7 +135,7 @@ static int board_radius = 75;
     NSInteger toX = x+50;
     NSInteger toY = y+20;
     
-    [UIView beginAnimations:nil context:NULL]; // animate the following:
+    [UIView beginAnimations:nil context:NULL];
     crosshair.center = CGPointMake(toX, toY);
     [UIView setAnimationDuration:0.1];
     [UIView commitAnimations];

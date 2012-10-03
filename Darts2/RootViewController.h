@@ -35,9 +35,9 @@
 @property (nonatomic, retain) DartsModel *dartsModel;
 
 @property (retain, nonatomic) NSArray *fields;
-@property (readwrite, atomic) int dart;
-@property (readwrite, atomic) int totalPoints;
-@property (readwrite, atomic) int deviation;
+@property (nonatomic) int dart;
+@property (nonatomic) int totalPoints;
+@property (nonatomic) int deviation;
 @property (retain, nonatomic) SettingsViewController *settingsViewController;
 @property (retain, nonatomic) IBOutlet UISlider *verticalSlider;
 @property (retain, nonatomic) IBOutlet UISlider *horizontalSlider;
