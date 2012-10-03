@@ -34,7 +34,8 @@
         if ( self.settingsSimpleViewController == nil )
         {
             SettingsSimpleViewController *tmp = [[SettingsSimpleViewController alloc] initWithNibName:@"SettingsSimpleViewController" bundle:nil];
-            tmp.title = @"Settings simple";
+            tmp.title = @"Simple";
+            tmp.tabBarItem.image = [UIImage imageNamed:@"settings.png"];
             self.settingsSimpleViewController = tmp;
             [tmp release]; tmp = nil;
         }
@@ -45,7 +46,8 @@
         if ( self.settingsAdvancedViewController == nil )
         {
             SettingsAdvancedViewController *tmp = [[SettingsAdvancedViewController alloc] initWithNibName:@"SettingsAdvancedViewController" bundle:nil];
-            tmp.title = @"Settings simple";
+            tmp.title = @"Advanced";
+            tmp.tabBarItem.image = [UIImage imageNamed:@"settings.png"];
             self.settingsAdvancedViewController = tmp;
             [tmp release]; tmp = nil;
         }

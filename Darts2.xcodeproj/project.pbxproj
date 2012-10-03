@@ -16,6 +16,7 @@
 		DA045CD71615AFDE00F50B7B /* DartsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DA045CD61615AFDE00F50B7B /* DartsModel.m */; };
 		DA3EC1281610A5E800240735 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3EC1261610A5E800240735 /* SettingsViewController.m */; };
 		DA44837016147AA80041B75F /* darts.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA44836F16147AA80041B75F /* darts.plist */; };
+		DA6C64D1161C67EA00076356 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = DA6C64D0161C67EA00076356 /* settings.png */; };
 		DAE771C7160DED7000B333F6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE771C6160DED7000B333F6 /* UIKit.framework */; };
 		DAE771C9160DED7000B333F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE771C8160DED7000B333F6 /* Foundation.framework */; };
 		DAE771CB160DED7000B333F6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE771CA160DED7000B333F6 /* CoreGraphics.framework */; };
@@ -47,6 +48,7 @@
 		DA3EC1251610A5E800240735 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		DA3EC1261610A5E800240735 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		DA44836F16147AA80041B75F /* darts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = darts.plist; sourceTree = "<group>"; };
+		DA6C64D0161C67EA00076356 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Darts2/settings.png; sourceTree = "<group>"; };
 		DAE771C2160DED7000B333F6 /* Darts2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Darts2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE771C6160DED7000B333F6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DAE771C8160DED7000B333F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,7 @@
 		DAE771B7160DED7000B333F6 = {
 			isa = PBXGroup;
 			children = (
+				DA6C64D0161C67EA00076356 /* settings.png */,
 				323BAD42161B143400A1AB9D /* icon@x2.png */,
 				323BAD40161B141700A1AB9D /* icon.png */,
 				323BAD3C161B12E600A1AB9D /* retina_wood_@2X.png */,
@@ -227,6 +230,7 @@
 				323BAD3F161B12E600A1AB9D /* retina_wood.png in Resources */,
 				323BAD41161B141700A1AB9D /* icon.png in Resources */,
 				323BAD43161B143400A1AB9D /* icon@x2.png in Resources */,
+				DA6C64D1161C67EA00076356 /* settings.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
