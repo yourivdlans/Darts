@@ -58,8 +58,6 @@
     
     self.window.rootViewController = self.tabBarController;
     [self.window addSubview:self.tabBarController.view];
-    
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning

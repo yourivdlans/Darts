@@ -17,6 +17,7 @@
     UITextField *beersDrunkTextField;
     UIPickerView *dartPicker;
     NSArray *darts;
+    UITextField *dartPickerTextField;
 }
 
 @property (nonatomic, retain) DartsModel *dartsModel;
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) IBOutlet UITextField *beersDrunkTextField;
 @property (nonatomic, retain) IBOutlet UIPickerView *dartPicker;
 @property (nonatomic, retain) IBOutlet NSArray *darts;
+@property (nonatomic, retain) IBOutlet UITextField *dartPickerTextField;
 
 - (IBAction)setAdvancedSetting:(id)sender;
 
