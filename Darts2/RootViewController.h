@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "SettingsViewController.h"
+#import "DartsModel.h"
 
 @class SettingsViewController;
 
 @interface RootViewController : UIViewController
 {
+    DartsModel *dartsModel;
+    
     SettingsViewController *settingsViewController;
     UISlider *verticalSlider;
     UISlider *horizontalSlider;
@@ -26,7 +29,10 @@
     UILabel *dart2label;
     UILabel *dart3label;
     UILabel *crosshair;
+    NSTimer *crosshairTimer;
 }
+
+@property (nonatomic, retain) DartsModel *dartsModel;
 
 @property (retain, nonatomic) NSArray *fields;
 @property (readwrite, atomic) int dart;

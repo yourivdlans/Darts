@@ -14,7 +14,6 @@ static int triple_start_radius = 43;
 static int triple_stop_radius = 47;
 static int double_start_radius = 71;
 static int board_radius = 75;
-static int slider_max_value = 200;
 
 @interface RootViewController ()
 
@@ -22,20 +21,21 @@ static int slider_max_value = 200;
 
 @implementation RootViewController
 
-@synthesize settingsViewController, verticalSlider, horizontalSlider, fields, dart, totalPoints, totalPointsLabel, dart1label, dart2label, dart3label, crosshair, deviation;
+@synthesize dartsModel, settingsViewController, verticalSlider, horizontalSlider, fields, dart, totalPoints, totalPointsLabel, dart1label, dart2label, dart3label, crosshair, deviation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    self.dartsModel = [DartsModel sharedManager];
+    
     CGAffineTransform trans = CGAffineTransformMakeRotation(M_PI * 0.5);
     verticalSlider.transform = trans;
     
@@ -49,10 +49,28 @@ static int slider_max_value = 200;
     fields = [[NSArray alloc] initWithObjects:@20, @1, @18, @4, @13, @6, @10, @15, @2, @17, @3, @19, @7, @16, @8, @11, @14, @9, @12, @5, nil];
     dart = 0;
     totalPoints = 0;
-    deviation = 20;
+    deviation = [self determineDeviation];
     
     crosshair.hidden = YES;
-    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(deviateCrosshair) userInfo:nil repeats:YES];
+
+    double interval = 1 - ( self.dartsModel.level * 0.4 );
+    [self startTimerWithInterval:interval];
+    
+    [super viewDidLoad];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    double interval = 1 - ( self.dartsModel.level * 0.4 );
+    [self startTimerWithInterval:interval];
+    [self determineDeviation];
+}
+
+- (void) startTimerWithInterval:(double)interval
+{
+    [crosshairTimer invalidate];
+    crosshairTimer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(deviateCrosshair) userInfo:nil repeats:YES];
+    [crosshairTimer fire];
 }
 
 - (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -73,6 +91,19 @@ static int slider_max_value = 200;
         
         totalPointsLabel.center = CGPointMake(85,390);
     }
+}
+
+- (int)determineDeviation
+{
+    deviation = 1;
+    deviation += dartsModel.beersDrunk;
+    deviation *= dartsModel.dart / 5 + 1;
+    if( dartsModel.overweight == NO )
+    {
+        deviation += 10;
+    }
+    
+    return deviation;
 }
 
 - (IBAction)positionCrosshair:(id)sender
@@ -121,9 +152,6 @@ static int slider_max_value = 200;
     int horizontal = crosshair.center.x - 50;
     int vertical = crosshair.center.y - 20;
 
-    NSLog(@"Hori: %f", crosshair.center.x - 50);
-    NSLog(@"Verti: %f", crosshair.center.y - 20);
-    
     double distance = sqrt(  pow((double)horizontal - 100, 2) + pow((double)vertical - 100, 2) );
     double angle = atan((((double)horizontal - 100) / (100 - (double)vertical)) ) * ( 180 / M_PI);
     
