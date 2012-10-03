@@ -20,15 +20,18 @@
     NSArray *fields;
     NSInteger dart;
     NSInteger totalPoints;
+    NSInteger deviation;
     UILabel *totalPointsLabel;
     UILabel *dart1label;
     UILabel *dart2label;
     UILabel *dart3label;
+    UILabel *crosshair;
 }
 
 @property (retain, nonatomic) NSArray *fields;
 @property (readwrite, atomic) int dart;
 @property (readwrite, atomic) int totalPoints;
+@property (readwrite, atomic) int deviation;
 @property (retain, nonatomic) SettingsViewController *settingsViewController;
 @property (retain, nonatomic) IBOutlet UISlider *verticalSlider;
 @property (retain, nonatomic) IBOutlet UISlider *horizontalSlider;
@@ -36,11 +39,13 @@
 @property (retain, nonatomic) IBOutlet UILabel *dart1label;
 @property (retain, nonatomic) IBOutlet UILabel *dart2label;
 @property (retain, nonatomic) IBOutlet UILabel *dart3label;
-@property (retain, nonatomic) IBOutlet UIButton *fire;
-
+@property (retain, nonatomic) IBOutlet UILabel *crosshair;
 
 - (IBAction)showSettings;
 - (IBAction)fire;
+- (IBAction)positionCrosshair:(id)sender;
 - (BOOL)checkBouncerWithAngle:(double)angle AndDistance:(double)distance;
+- (void)moveCrosshairWithX:(int)x andWithY:(int)y;
+- (void)deviateCrosshair;
 
 @end
