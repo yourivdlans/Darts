@@ -8,13 +8,13 @@
 
 #import "RootViewController.h"
 
-static int bulls_eye_radius = 5;
-static int bull_radius = 10;
-static int triple_start_radius = 57;
-static int triple_stop_radius = 63;
-static int double_start_radius = 94;
-static int board_radius = 100;
-
+static int bulls_eye_radius = 4;
+static int bull_radius = 8;
+static int triple_start_radius = 43;
+static int triple_stop_radius = 47;
+static int double_start_radius = 71;
+static int board_radius = 75;
+static int slider_max_value = 200;
 
 @interface RootViewController ()
 
@@ -22,7 +22,7 @@ static int board_radius = 100;
 
 @implementation RootViewController
 
-@synthesize settingsViewController, verticalSlider, horizontalSlider, fields, dart, totalPoints, totalPointsLabel, dart1label, dart2label, dart3label, fire;
+@synthesize settingsViewController, verticalSlider, horizontalSlider, fields, dart, totalPoints, totalPointsLabel, dart1label, dart2label, dart3label, crosshair, deviation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,7 +49,10 @@ static int board_radius = 100;
     fields = [[NSArray alloc] initWithObjects:@20, @1, @18, @4, @13, @6, @10, @15, @2, @17, @3, @19, @7, @16, @8, @11, @14, @9, @12, @5, nil];
     dart = 0;
     totalPoints = 0;
-	// Do any additional setup after loading the view.
+    deviation = 20;
+    
+    crosshair.hidden = YES;
+    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(deviateCrosshair) userInfo:nil repeats:YES];
 }
 
 - (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -72,6 +75,40 @@ static int board_radius = 100;
     }
 }
 
+- (IBAction)positionCrosshair:(id)sender
+{
+    if( crosshair.isHidden )
+    {
+         crosshair.hidden = NO;
+    }
+    
+    int horizontal = (int)(horizontalSlider.value);
+    int vertical = (int)(verticalSlider.value);
+    [self moveCrosshairWithX:horizontal andWithY:vertical];
+}
+
+- (void)deviateCrosshair
+{
+    int deviation_x = (arc4random() % (deviation*2)) - deviation;
+    int deviation_y = (arc4random() % (deviation*2)) - deviation;
+    
+    int horizontal = (int)(horizontalSlider.value) + deviation_x;
+    int vertical = (int)(verticalSlider.value) + deviation_y;
+    
+    [self moveCrosshairWithX:horizontal andWithY:vertical];
+}
+
+- (void)moveCrosshairWithX:(int)x andWithY:(int)y
+{
+    NSInteger toX = x+50;
+    NSInteger toY = y+20;
+    
+    [UIView beginAnimations:nil context:NULL]; // animate the following:
+    crosshair.center = CGPointMake(toX, toY);
+    [UIView setAnimationDuration:0.1];
+    [UIView commitAnimations];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -81,15 +118,18 @@ static int board_radius = 100;
 
 - (IBAction)fire
 {
-    int horizontal = (int)(horizontalSlider.value+0.5F);
-    int vertical = (int)(verticalSlider.value+0.5F);
+    int horizontal = crosshair.center.x - 50;
+    int vertical = crosshair.center.y - 20;
+
+    NSLog(@"Hori: %f", crosshair.center.x - 50);
+    NSLog(@"Verti: %f", crosshair.center.y - 20);
     
-    double distance = sqrt(  pow((double)horizontal - 125, 2) + pow((double)vertical - 125, 2) );
-    double angle = atan((((double)horizontal - 125) / (125 - (double)vertical)) ) * ( 180 / M_PI);
+    double distance = sqrt(  pow((double)horizontal - 100, 2) + pow((double)vertical - 100, 2) );
+    double angle = atan((((double)horizontal - 100) / (100 - (double)vertical)) ) * ( 180 / M_PI);
     
-    if( vertical > 125 ){
+    if( vertical > 100 ){
         angle = angle + 180;
-    }else if( horizontal < 125 && vertical <= 125 ){
+    }else if( horizontal < 100 && vertical <= 100 ){
         angle = angle + 360;
     }
     
@@ -111,6 +151,13 @@ static int board_radius = 100;
         }
     }
     
+    bool bouncer = [self checkBouncerWithAngle:angle AndDistance:distance];
+    
+    if(bouncer == YES)
+    {
+        points = 0;
+    }
+    
     totalPoints += points;
     
     NSString * totalPointslabelValue = [[NSString alloc] initWithFormat:@"Total points: %d", totalPoints];
@@ -127,7 +174,6 @@ static int board_radius = 100;
         dart3label.text = [NSString stringWithFormat:@"Dart 3: %d", points];
     }
     
-    bool bouncer = [self checkBouncerWithAngle:angle AndDistance:distance];
     if( dart >= 3 ){
         NSString *endOfTurnAlertMessage = [[NSString alloc] initWithFormat:@"Je hebt in totaal %d punten!", totalPoints];
         UIAlertView *endOfTurnAlert = [[UIAlertView alloc] initWithTitle:@"Je beurt is afgelopen!"
