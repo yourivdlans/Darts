@@ -8,15 +8,13 @@
 
 #import "SettingsSimpleViewController.h"
 
-#define dataPath @"darts.plist"
-
 @interface SettingsSimpleViewController ()
 
 @end
 
 @implementation SettingsSimpleViewController
 
-@synthesize dartsModel, levelPicker, levels;
+@synthesize dartsModel, levelPicker, levels, levelPickerTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,10 +31,14 @@
     self.levels = temp;
     [temp release];
     
-//    CGFloat dX=levelPicker.bounds.size.width/2, dY=levelPicker.bounds.size.height/2;
-//    levelPicker.transform = CGAffineTransformTranslate(CGAffineTransformScale(CGAffineTransformMakeTranslation(-dX, -dY), 0.6, 0.6), dX, dY);
+    // Hide picker on view press
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissPicker)];
+    tap.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tap];
+    [tap release];
     
-    [levelPicker selectRow:self.dartsModel.level inComponent:0 animated:NO];
+    // Set default values
+    self.levelPickerTextField.text = [levels objectAtIndex:self.dartsModel.level];
     
     [super viewDidLoad];
 }
@@ -45,6 +47,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dismissPicker {
+    [levelPickerTextField resignFirstResponder];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -65,6 +71,25 @@
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     self.dartsModel.level = row;
+    self.levelPickerTextField.text = [levels objectAtIndex:row];
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if ( textField == levelPickerTextField )
+    {
+        levelPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 200)];
+        levelPicker.delegate = self;
+        levelPicker.dataSource = self;
+        levelPicker.showsSelectionIndicator = YES;
+        
+        [levelPicker selectRow:self.dartsModel.level inComponent:0 animated:NO];
+        
+        textField.inputView = levelPicker;
+        [levelPicker release];
+    }
+    
+    return YES;
 }
 
 @end

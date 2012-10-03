@@ -14,7 +14,7 @@
 
 @implementation SettingsAdvancedViewController
 
-@synthesize dartsModel, overweightSwitch, beersDrunkTextField, dartPicker, darts;
+@synthesize dartsModel, overweightSwitch, beersDrunkTextField, dartPicker, darts, dartPickerTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,24 +29,21 @@
 {
     [super viewDidLoad];
     
+    // Set dart picker values
     NSArray *temp = [[NSArray alloc] initWithObjects:@"Aluminum", @"Steel", @"Gold", nil];
     self.darts = temp;
     [temp release];
     
+    // Hide keyboard / picker on view press
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
-    
     [tap release];
     
-//    CGFloat dX=dartPicker.bounds.size.width/2, dY=dartPicker.bounds.size.height/2;
-//    dartPicker.transform = CGAffineTransformTranslate(CGAffineTransformScale(CGAffineTransformMakeTranslation(-dX, -dY), 0.6, 0.6), dX, dY);
-    
-    [dartPicker selectRow:self.dartsModel.dart inComponent:0 animated:NO];
+    // Set default values
     [overweightSwitch setOn:self.dartsModel.overweight];
     [beersDrunkTextField setText:[NSString stringWithFormat:@"%i", self.dartsModel.beersDrunk]];
-    
-    // Do any additional setup after loading the view from its nib.
+    self.dartPickerTextField.text = [darts objectAtIndex:self.dartsModel.dart];
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,6 +54,7 @@
 
 -(void)dismissKeyboard {
     [beersDrunkTextField resignFirstResponder];
+    [dartPickerTextField resignFirstResponder];
 }
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -105,6 +103,25 @@
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     self.dartsModel.dart = row;
+    self.dartPickerTextField.text = [darts objectAtIndex:row];
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if ( textField == dartPickerTextField )
+    {
+        dartPicker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 200)];
+        dartPicker.delegate = self;
+        dartPicker.dataSource = self;
+        dartPicker.showsSelectionIndicator = YES;
+        
+        [dartPicker selectRow:self.dartsModel.dart inComponent:0 animated:NO];
+        
+        textField.inputView = dartPicker;
+        [dartPicker release];
+    }
+    
+    return YES;
 }
 
 @end
